@@ -7,7 +7,7 @@ function CheckTokens() {
     var input = document.getElementById("tokens").value.split("\n");
 
     input.forEach(token => {
-        if(token.length == 59 || token.length == 88)
+        if(true)
         {
             let xhr = new XMLHttpRequest();
             xhr.open('GET', 'https://discord.com/api/v9/users/@me/outbound-promotions/codes', true);
