@@ -31,8 +31,8 @@ function CheckTokens() {
                     xhr2.onload = function () {
 
                         if (xhr.status == 200) {                        
-                            username = xhr2.response.split(`, "username": "`)[1].split(`", "avatar":`)[0] + "#" + xhr2.response.split(`, "discriminator": "`)[1].split(`", "public_flags":`)[0]
-                            if(xhr2.response.split(`", "avatar": `)[1].split(`, "discriminator`)[0] == "null"){
+                            username = xhr2.response.split(`, "username": "`)[1].split(`", "verified":`)[0]
+                            if(xhr2.response.split(`", "avatar": `)[1].split(`, "avatar_decoration_data`)[0] == "null"){
                                 document.getElementById("valid_tokens").innerHTML += 
                                 `<div class="account">
                                     <div class="box">
@@ -44,8 +44,8 @@ function CheckTokens() {
                                     </div>
                                 </div>`  
                             } else {
-                                var id = xhr2.response.split(`{"id": "`)[1].split(`", "username": "`)[0];
-                                var scd = xhr2.response.split(`", "avatar": "`)[1].split(`", "discriminator`)[0];
+                                var id = xhr2.response.split(`"id": "`)[1].split(`", "linked_users": "`)[0];
+                                var scd = xhr2.response.split(`", "avatar": "`)[1].split(`", "avatar_decoration_data`)[0];
                                 var avatar = `https://cdn.discordapp.com/avatars/${id}/${scd}`;
                                 document.getElementById("valid_tokens").innerHTML += 
                                 `<div class="account">
@@ -60,8 +60,8 @@ function CheckTokens() {
                             }
                         }
                         if (xhr.status == 403) {
-                            username = xhr2.response.split(`, "username": "`)[1].split(`", "avatar":`)[0] + "#" + xhr2.response.split(`, "discriminator": "`)[1].split(`", "public_flags":`)[0]
-                            if(xhr2.response.split(`", "avatar": `)[1].split(`, "discriminator`)[0] == "null"){
+                            username = xhr2.response.split(`, "username": "`)[1].split(`", "verified":`)[0]
+                            if(xhr2.response.split(`", "avatar": `)[1].split(`, "avatar_decoration_data`)[0] == "null"){
                                 document.getElementById("locked_tokens").innerHTML += 
                                 `<div class="account">
                                     <div class="box">
@@ -73,8 +73,8 @@ function CheckTokens() {
                                     </div>
                                 </div>`  
                             } else {
-                                var id = xhr2.response.split(`{"id": "`)[1].split(`", "username": "`)[0];
-                                var scd = xhr2.response.split(`", "avatar": "`)[1].split(`", "discriminator`)[0];
+                                var id = xhr2.response.split(`"id": "`)[1].split(`", "linked_users": "`)[0];
+                                var scd = xhr2.response.split(`", "avatar": "`)[1].split(`", "avatar_decoration_data`)[0];
                                 var avatar = `https://cdn.discordapp.com/avatars/${id}/${scd}`;
                                 document.getElementById("valid_tokens").innerHTML += 
                                 `<div class="account">
