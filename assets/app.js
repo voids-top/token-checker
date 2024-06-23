@@ -32,7 +32,7 @@ function CheckTokens() {
                     xhr2.onload = function () {
                         if (xhr.status == 200) {                        
                             username = xhr2.response.username;
-                            if(xhr2.response.avatar){
+                            if(!xhr2.response.avatar){
                                 document.getElementById("valid_tokens").innerHTML += 
                                 `<div class="account">
                                     <div class="box">
