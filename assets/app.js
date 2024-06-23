@@ -88,6 +88,18 @@ function CheckTokens() {
                                 </div>`  
                             }
                         }
+                        if (xhr.status == 401) {
+                            document.getElementById("invalid_tokens").innerHTML += 
+                                `<div class="account">
+                                    <div class="box">
+                                        <img src="./assets/Default.png" alt="User Avatar">
+                                    </div>
+                                    <div class="box">
+                                        <span>XXXXX#0000</span>
+                                        <p>${token}</p>
+                                    </div>
+                                </div>`
+                        }
                     }
                     xhr2.send();
                 }
